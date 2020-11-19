@@ -28,7 +28,7 @@ namespace projeto_hotel.hotel.room.Double
             return this;
         }
 
-        public DoubleRoom Build()
+        public DoubleRoom build()
         {
             return this._doubleRoom;
         }

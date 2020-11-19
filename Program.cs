@@ -9,33 +9,21 @@ namespace projeto_hotel
     {
         static void Main(string[] args)
         {
-            var teste = "Quarto Simples";
+            /* CRIANDO OS QUARTOS DO HOTEL */
+            var _simple = new SimpleBuilder();
+            var _double = new DoubleBuilder();
+            var _triple = new TripleBuilder();
+            
+            /* DIRETORES QUE CONSTROEM PELO TIPO DO HOTEL*/
+            var _DirectorSimple = new DirectorRoom(_simple);
+            var _DirectorDouble = new DirectorRoom(_double);
+            var _DirectorTriple = new DirectorRoom(_triple);
 
-            if(teste == "Quarto Triplo"){
-                var director = new DirectorRoom();
-                TripleBuilder triple = new TripleBuilder();
+            _DirectorSimple.Make();
+            SimpleRoom a = _simple.build();
 
-                director.Triple(triple);
-                TripleRoom tripleRoom = triple.Build();
-
-                tripleRoom.Message();
-                Console.WriteLine($"Descricao do Quarto: {tripleRoom.DescriptionRoom}");
-    
-            }else if(teste == "Quarto Duplo"){
-                //var doubleRoom = new DirectorRoom(new DoubleBuilder());
-                DoubleRoom double1 = new DoubleBuilder().Build();
-                
-                double1.Message();
-                Console.WriteLine($"Descricao do Quarto: {double1.DescriptionRoom}");
-
-            }else if(teste == "Quarto Simples"){
-                //var simpleRoom = new DirectorRoom(new SimpleBuilder());
-                SimpleRoom simple = new SimpleBuilder().Build();
-
-                simple.Message();
-                Console.WriteLine($"Descricao do Quarto: {simple.DescriptionRoom}");
-                
-            }
+            Console.WriteLine(a.DescriptionRoom);
+            a.Message();
             
         }
     }

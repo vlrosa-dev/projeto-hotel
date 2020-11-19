@@ -26,11 +26,10 @@ namespace projeto_hotel.hotel.room
             _simpleRoom.ValueRoom = _valueRoom;
             return this;
         }
- 
-        public SimpleRoom Build()
+
+        public SimpleRoom build()
         {
             return this._simpleRoom;
         }
-
     }
 }

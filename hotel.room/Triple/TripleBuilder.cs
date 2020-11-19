@@ -4,6 +4,11 @@ namespace projeto_hotel.hotel.room.Triple
     {
         private TripleRoom _tripleRoom;
 
+        public TripleBuilder()
+        {
+            _tripleRoom = new TripleRoom();
+        }
+
         public IRoom DescriptionRoom(string _descriptRoom)
         {
             _tripleRoom.DescriptionRoom = _descriptRoom;
@@ -21,8 +26,8 @@ namespace projeto_hotel.hotel.room.Triple
             _tripleRoom.ValueRoom = _valueRoom;
             return this;
         }
- 
-        public TripleRoom Build()
+
+        public TripleRoom build()
         {
             return this._tripleRoom;
         }
