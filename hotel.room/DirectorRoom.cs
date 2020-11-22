@@ -1,6 +1,7 @@
 using System;
 using projeto_hotel.hotel.room.Double;
 using projeto_hotel.hotel.room.Triple;
+using projeto_hotel.hotel.booking;
 
 namespace projeto_hotel.hotel.room
 {
@@ -8,12 +9,15 @@ namespace projeto_hotel.hotel.room
     {
         private IRoom _room;
 
+        public string NumberRoom { get; set; }
+
         public DirectorRoom(IRoom room)
         {
             _room = room;
+            NumberRoom = new Random().Next(1, 50).ToString();
         }
 
-        public void Make(){
+        public IRoom Make(){
             
             var _TypeRoom = _room.GetType();
             
@@ -38,6 +42,8 @@ namespace projeto_hotel.hotel.room
                     .ValueRoom(1500)
                     .DescriptionRoom("Quarto para até três pessoas!");
             } 
+
+            return this._room;
         }
 
     }

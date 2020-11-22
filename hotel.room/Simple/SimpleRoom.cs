@@ -6,8 +6,6 @@ namespace projeto_hotel.hotel.room
     {
         public string TypeRoom { get; set; }
         
-        public int NumberRoom { get; set; }
-        
         public string DescriptionRoom { get; set; }
 
         public decimal ValueRoom { get; set; }
