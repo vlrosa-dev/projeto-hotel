@@ -7,9 +7,6 @@ namespace projeto_hotel.hotel.expenses
         
         public abstract decimal Valor { get; set; }
 
-        public decimal CalculaTotal(){
-            return Valor++;
-        }
 
     }
 }
